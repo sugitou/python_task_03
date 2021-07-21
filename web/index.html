@@ -1,6 +1,5 @@
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>eelテスト</title>
         <link rel="stylesheet" href="./style.css">
     </head>
@@ -14,6 +13,12 @@
         <textarea cols="50" rows="20" id="log" readonly></textarea>
         <script type="text/javascript" src="./eel.js"></script>
         <script type="text/javascript">
+
+            async function js_function(fileName, keyword) {
+                let val = await eel.kimetsu_search(keyword, fileName)();
+                document.getElementById('log').value += val + "\n";
+            }
+
             var search = document.getElementById('search')
             search.addEventListener('click', () => {
                 if (input_form.input.value == "") {
@@ -22,21 +27,14 @@
                 }else {
                     var fileName = document.getElementById('csv_search').value;
                     var keyword = document.getElementById('kw_search').value;
-                    eel.kimetsu_search(keyword, fileName);
-                    document.getElementById('log').value += keyword + "\n";
+                    js_function(fileName, keyword);
                     return true;
                 }
-                <!--
-                    テストで動かす際に使用
-                    document.write('<p>JavaScriptのテスト</p>');
-                    document.getElementById('log').value += val + "\n";
-                    eel.kimetsu_search(keyword, filename);
-                -->
             })
-            eel.expose(view_log_js)
-            function view_log_js(text) {
-                document.getElementById('log').value += text + "\n";
-            }
+            //eel.expose(view_log_js)
+            //function view_log_js(text) {
+            //    document.getElementById('log').value += text + "\n";
+            //}
         </script>
     </body>
 </html>

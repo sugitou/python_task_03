@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>eelテスト</title>
         <link rel="stylesheet" href="./style.css">
     </head>
@@ -22,17 +23,18 @@
                     var fileName = document.getElementById('csv_search').value;
                     var keyword = document.getElementById('kw_search').value;
                     eel.kimetsu_search(keyword, fileName);
-                    // document.getElementById('log').value += keyword + "\n";
+                    document.getElementById('log').value += keyword + "\n";
                     return true;
                 }
                 <!--
-                document.write('<p>JavaScriptのテスト</p>');
-                document.getElementById('log').value += val + "\n";
-                eel.kimetsu_search(keyword, filename);
+                    テストで動かす際に使用
+                    document.write('<p>JavaScriptのテスト</p>');
+                    document.getElementById('log').value += val + "\n";
+                    eel.kimetsu_search(keyword, filename);
                 -->
             })
             eel.expose(view_log_js)
-            function view_log_js(text){
+            function view_log_js(text) {
                 document.getElementById('log').value += text + "\n";
             }
         </script>

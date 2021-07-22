@@ -9,12 +9,19 @@ def save_csv(save_dir, filename):
     new_dir = base_dir + '/' + save_dir
     # 指定ディレクトリ作成
     if new_dir:
+        print('1:new_dir',new_dir)
+        print(os.path.isdir(new_dir))
         pass
     else:
         os.mkdir(new_dir)
+        print('2:new_dir',new_dir)
+        print(os.path.isdir(new_dir))
     
     # サーチ後のcsvファイル読み込み
-    with open(filename, 'r', encoding='utf_8-sig') as rf:
+    # Windows環境なら以下
+    # with open(filename, 'r', encoding='utf_8-sig') as rf:
+    # Mac環境のため今回はフルパスを指定
+    with open(f"/Users/right/python課題/project03/{filename}", 'r', encoding='utf_8-sig') as rf:
         h = next(csv.reader(rf))
         read_data = rf.readlines()
     

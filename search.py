@@ -17,7 +17,7 @@ def kimetsu_search(word, csv_file):
         textlog = log_y
 
     else:
-        log_n = "『{}』はありません".format(word)
+        log_n = "『{}』はありません".format(word) + "\n" + "『{}』を追加します".format(word)
         print(log_n)
         textlog = log_n
         # 追加

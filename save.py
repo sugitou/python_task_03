@@ -8,13 +8,9 @@ def save_csv(save_dir, filename):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     new_dir = base_dir + '/' + save_dir
     # 指定ディレクトリ作成
-    if new_dir:
-        print('1:new_dir',new_dir)
-        print(os.path.isdir(new_dir))
-        pass
-    else:
+    if not os.path.exists(new_dir):
         os.mkdir(new_dir)
-        print('2:new_dir',new_dir)
+        print('new_dir',new_dir)
         print(os.path.isdir(new_dir))
     
     # サーチ後のcsvファイル読み込み

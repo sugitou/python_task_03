@@ -1,6 +1,5 @@
 import pandas as pd
 import eel
-import os
 
 ### デスクトップアプリ作成課題
 def kimetsu_search(word, csv_file):
@@ -15,12 +14,12 @@ def kimetsu_search(word, csv_file):
 
     # 検索
     if word in source:
-        log_y = "『{}』はあります".format(word)
+        log_y = f"『{word}』はあります"
         print(log_y)
         textlog = log_y
 
     else:
-        log_n = "『{}』はありません".format(word) + "\n" + "『{}』を追加します".format(word)
+        log_n = f"『{word}』はありません" + "\n" + f"『{word}』を追加します"
         print(log_n)
         textlog = log_n
         # 追加

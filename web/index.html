@@ -15,19 +15,24 @@
         <script type="text/javascript" src="./eel.js"></script>
         <script type="text/javascript">
             async function js_function(keyword, fileName, dirname) {
+                // document.write('<p>JavaScriptのテスト</p>');
                 let val = await eel.kimetsu_search(keyword, fileName, dirname)();
                 document.getElementById('log').value += val + "\n";
             }
-            var search = document.getElementById('search')
+            let search = document.getElementById('search')
             search.addEventListener('click', () => {
                 if (input_form.input.value == "") {
                     alert("何か入力してください");
                     return false;
                 }else {
-                    var keyword = document.getElementById('kw-search').value;
-                    var fileName = document.getElementById('csv-search').value;
-                    var dirname = document.getElementById('csv-dir').value;
-                    js_function(keyword, fileName, dirname);
+                    // let keyword = kw-search.value;
+                    // let fileName = csv-search.value;
+                    // let dirname = csv-dir.value;
+                    // let keyword = document.getElementById('kw-search').value;
+                    // let fileName = document.getElementById('csv-search').value;
+                    // let dirname = document.getElementById('csv-dir').value;
+                    js_function(kw-search.value, csv-search.value, csv-dir.value);
+                    // js_function(keyword, fileName, dirname);
                     return true;
                 }
             })

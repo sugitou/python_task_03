@@ -5,9 +5,9 @@ import eel
 def kimetsu_search(word, csv_file):
     # 検索対象取得
     # Mac環境のため今回はフルパスを指定
-    df=pd.read_csv(f"/Users/right/python課題/project03/{csv_file}")
+    # df=pd.read_csv(f"/Users/right/python課題/project03/{csv_file}")
     # Windows環境なら以下
-    # df=pd.read_csv(f"./{csv_file}")
+    df=pd.read_csv(f"./{csv_file}")
     source=list(df["name"])
 
     textlog = ''
@@ -30,8 +30,8 @@ def kimetsu_search(word, csv_file):
     # CSV書き込み
     df=pd.DataFrame(source,columns=["name"])
     # Mac環境のため今回はフルパスを指定
-    df.to_csv(f"/Users/right/python課題/project03/{csv_file}",encoding="utf_8-sig")
+    # df.to_csv(f"/Users/right/python課題/project03/{csv_file}",encoding="utf_8-sig")
     # Windows環境なら以下
-    # df.to_csv(f"./{csv_file}",encoding="utf_8-sig")
+    df.to_csv(f"./{csv_file}",encoding="utf_8-sig")
     print(source)
     return textlog

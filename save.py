@@ -15,9 +15,9 @@ def save_csv(save_dir, filename):
     
     # サーチ後のcsvファイル読み込み
     # Windows環境なら以下
-    # with open(filename, 'r', encoding='utf_8-sig') as rf:
+    with open(filename, 'r', encoding='utf_8-sig') as rf:
     # Mac環境のため今回はフルパスを指定
-    with open(f"/Users/right/python課題/project03/{filename}", 'r', encoding='utf_8-sig') as rf:
+    # with open(f"/Users/right/python課題/project03/{filename}", 'r', encoding='utf_8-sig') as rf:
         h = next(csv.reader(rf))
         read_data = rf.readlines()
     
